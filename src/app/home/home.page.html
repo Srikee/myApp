@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            หน้าหลัก
+        </ion-title>
+        <ion-buttons slot="primary">
+            <ion-button color="secondary">
+                <ion-icon slot="icon-only" name="person-sharp"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div class="style1">Num 1 : {{ num1 }}</div>
+    <div class="style2">Num 2 : {{ num2 }}</div>
+    <div class="style2">Sum : {{ sum }}</div>
+    <br>
+    <br>
+    <div>ชื่อ : {{ name }}</div>
+    <div>นามสกุล : {{ lname }}</div>
+    <div>ชื่อเต็ม : {{ name }} {{ lname }}</div>
+    <div>
+        สถานะ :
+        <span *ngIf="status==true">ใช้งาน</span>
+        <span *ngIf="status==false">ไม่ใช้งาน</span>
+    </div>
+    <div>
+        ตำแหน่ง :
+        <span *ngIf="position=='1'">teacher</span>
+        <span *ngIf="position=='2'">student</span>
+        <span *ngIf="position=='3'">staff</span>
+    </div>
+    <div *ngFor="let p of position_list">{{ p }}</div>
+    <!-- <a (click)="GoToPage2()">
+        <img src="assets/icon/favicon.png" alt="">
+    </a><br>
+    <a (click)="GoToPage3()">
+        <img src="assets/icon/favicon.png" alt="">
+    </a> -->
+
+    <ion-grid>
+        <ion-row>
+            <ion-col class="menu">
+                <a (click)="GoToPage2()">
+                    <img src="assets/icon/dormitory.png" alt="">
+                    <div>หอพัก</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu">
+                <a (click)="GoToPage3()">
+                    <img src="assets/icon/history.png" alt="">
+                    <div>ประวัติการจอง</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu">
+                <a>
+                    <img src="assets/icon/favicon.png" alt="">
+                    <div>????</div>
+                </a>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>
