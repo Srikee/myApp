@@ -31,5 +31,4 @@ export class HomePage {
   GoToPage3() {
     this.session.linkTo("page3");
   }
-
 }
