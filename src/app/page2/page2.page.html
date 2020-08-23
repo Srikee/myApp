@@ -7,12 +7,12 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-    <ion-item *ngFor="let resort of resorts">
+    <ion-item *ngFor="let resort of resorts" (click)="GoToResortDetail(resort)">
         <ion-thumbnail slot="start">
             <ion-img src="{{ resort.resort_img }}"></ion-img>
         </ion-thumbnail>
         <ion-label>
-            {{ resort.resort_id }} {{ resort.resort_name }}
+            {{ resort.resort_name }}
         </ion-label>
     </ion-item>
 </ion-content>

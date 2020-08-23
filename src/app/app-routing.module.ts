@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'page3',
     loadChildren: () => import('./page3/page3.module').then(m => m.Page3PageModule)
   },
+  {
+    path: 'resort-detail',
+    loadChildren: () => import('./resort-detail/resort-detail.module').then(m => m.ResortDetailPageModule)
+  },
 ];
 
 @NgModule({

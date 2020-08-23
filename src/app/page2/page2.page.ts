@@ -19,4 +19,9 @@ export class Page2Page implements OnInit {
       this.resorts = res.data;
     });
   }
+  GoToResortDetail(resort: any) {
+    this.session.linkToParam("resort-detail", {
+      resort_id: resort.resort_id
+    });
+  }
 }
