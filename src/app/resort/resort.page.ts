@@ -18,7 +18,7 @@ export class ResortPage implements OnInit {
     this.LoadData();
   }
   LoadData() {
-    this.session.ajax("http://localhost/myAppApi/resort-get.php", {}, true).then((res: any) => {
+    this.session.ajax(this.session.api + "resort-get.php", {}, true).then((res: any) => {
       this.resorts = res.data;
     }).catch(err => {
       this.session.showAlert("ติดต่อ server ไม่ได้");
