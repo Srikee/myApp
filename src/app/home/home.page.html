@@ -47,13 +47,62 @@
                 </a>
             </ion-col>
             <ion-col class="menu">
-                <a>
+                <a (click)="aaa()">
                     <img src="assets/icon/favicon.png" alt="">
                     <div>????</div>
                 </a>
             </ion-col>
         </ion-row>
+        <ion-row>
+            <ion-col class="menu">
+                <a (click)="bbb()">
+                    <img src="assets/icon/dormitory.png" alt="">
+                    <div>bbb</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu">
+                <a (click)="ccc()">
+                    <img src="assets/icon/dormitory.png" alt="">
+                    <div>ccc</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu">
+                <a (click)="ddd()">
+                    <img src="assets/icon/dormitory.png" alt="">
+                    <div>ddd</div>
+                </a>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="menu">
+                <a (click)="eee()">
+                    <img src="assets/icon/dormitory.png" alt="">
+                    <div>eee</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu">
+                <a (click)="fff()">
+                    <img src="assets/icon/dormitory.png" alt="">
+                    <div>fff</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu">
+                <a (click)="ggg()">
+                    <img src="assets/icon/dormitory.png" alt="">
+                    <div>ggg</div>
+                </a>
+            </ion-col>
+        </ion-row>
     </ion-grid>
+    <ion-button (click)="TestCallService()">Test Call Service</ion-button>
+    <!-- <div *ngFor="let resort of resorts">{{ resort.resort_id }} {{ resort.resort_name }}</div> -->
 
-
+    <ion-item *ngFor="let resort of resorts">
+        <ion-thumbnail slot="start">
+            <ion-img src="{{ resort.resort_img }}"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+            {{ resort.resort_id }} {{ resort.resort_name }}
+        </ion-label>
+    </ion-item>
 </ion-content>

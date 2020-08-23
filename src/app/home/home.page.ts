@@ -19,6 +19,7 @@ export class HomePage {
 
   position_list = ["teacher", "student", "staff", "aaa", "bbb"];
 
+  resorts = [];
 
   constructor(
     private session: SessionService
@@ -30,5 +31,59 @@ export class HomePage {
   }
   GoToPage3() {
     this.session.linkTo("page3");
+  }
+  TestCallService() {
+    // this.session.ajax(this.session.api + "example.php", {
+    //   val1: "Hello",
+    //   val2: "World"
+    // }, true).then((res: any) => {
+    //   console.log(res);
+    // }).catch(error => {
+    //   this.session.showAlert(error);
+    // });
+
+    this.session.ajax("http://localhost/myAppApi/example.php", {}, true).then((res: any) => {
+      // alert(res.data[1].resort_id);
+      // alert(res.data[1].resort_name);
+      this.resorts = res.data;
+    });
+  }
+  aaa() {
+    // alert("AAAAA");
+    // alert("SSSS");
+    this.session.showAlert("AAAAA").then(rs => {
+      this.session.showAlert("SSSS");
+    });
+  }
+  bbb() {
+    this.session.showConfirm("AAA").then(rs => {
+      if (rs == true) {
+        alert("To do ...");
+      }
+    });
+  }
+  ccc() {
+    this.session.showToast("AAAAA", 5000);
+  }
+  ddd() {
+    this.session.getStorage("key1").then(rs => {
+      alert(rs);
+    });
+  }
+  eee() {
+    this.session.setStorage("key1", "Hello").then(rs => {
+      alert("Save Success");
+    });
+  }
+  fff() {
+    this.session.removeStorage("key1").then(rs => {
+      alert("Remove Success");
+    });
+  }
+  ggg() {
+    this.session.linkToParam("page3", {
+      "data1": "Hello",
+      "data2": "World"
+    });
   }
 }
