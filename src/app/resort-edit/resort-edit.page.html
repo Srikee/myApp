@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>แก้ไขรีสอร์ท</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-item>
+        <ion-label>ชื่อรีสอร์ท</ion-label>
+        <ion-input [(ngModel)]="resort.resort_name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>รายละเอียด</ion-label>
+        <ion-input [(ngModel)]="resort.resort_detail"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Url รูป</ion-label>
+        <ion-input [(ngModel)]="resort.resort_img"></ion-input>
+    </ion-item>
+    <ion-button (click)="Edit()" color="warning">แก้ไข</ion-button>
+</ion-content>

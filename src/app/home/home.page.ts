@@ -26,8 +26,8 @@ export class HomePage {
   ) {
 
   }
-  GoToPage2() {
-    this.session.linkTo("page2");
+  GoToResort() {
+    this.session.linkTo("resort");
   }
   GoToPage3() {
     this.session.linkTo("page3");

@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>รีสอร์ททั้งหมด</ion-title>
+        <ion-buttons slot="end" (click)="Add()">
+            <ion-button color="success">
+                <ion-icon slot="icon-only" name="add-circle-sharp"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-item *ngFor="let resort of resorts">
+        <ion-thumbnail slot="start">
+            <ion-img src="{{ resort.resort_img }}"></ion-img>
+        </ion-thumbnail>
+        <ion-label (click)="GoToResortDetail(resort)">
+            {{ resort.resort_name }}
+        </ion-label>
+        <ion-buttons slot="end">
+            <ion-button color="warning" (click)="Edit(resort)">
+                <ion-icon slot="icon-only" name="create-sharp"></ion-icon>
+            </ion-button>
+            <ion-button color="danger" (click)="Del(resort)">
+                <ion-icon slot="icon-only" name="trash-sharp"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-item>
+</ion-content>

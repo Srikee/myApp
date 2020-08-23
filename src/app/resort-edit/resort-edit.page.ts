@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { SessionService } from '../session/session.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-resort-detail',
-  templateUrl: './resort-detail.page.html',
-  styleUrls: ['./resort-detail.page.scss'],
+  selector: 'app-resort-edit',
+  templateUrl: './resort-edit.page.html',
+  styleUrls: ['./resort-edit.page.scss'],
 })
-export class ResortDetailPage implements OnInit {
+export class ResortEditPage implements OnInit {
   resort_id = "";
   resort = {};
   constructor(
@@ -25,6 +25,13 @@ export class ResortDetailPage implements OnInit {
       resort_id: this.resort_id
     }, true).then((res: any) => {
       this.resort = res.data;
+    }).catch(err => {
+      this.session.showAlert("ติดต่อ server ไม่ได้");
+    });
+  }
+  Edit() {
+    this.session.ajax("http://localhost/myAppApi/resort-edit.php", this.resort, true).then((res: any) => {
+      this.session.back();
     }).catch(err => {
       this.session.showAlert("ติดต่อ server ไม่ได้");
     });

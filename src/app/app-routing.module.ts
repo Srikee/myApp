@@ -12,16 +12,24 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'page2',
-    loadChildren: () => import('./page2/page2.module').then(m => m.Page2PageModule)
-  },
-  {
     path: 'page3',
     loadChildren: () => import('./page3/page3.module').then(m => m.Page3PageModule)
   },
   {
     path: 'resort-detail',
     loadChildren: () => import('./resort-detail/resort-detail.module').then(m => m.ResortDetailPageModule)
+  },
+  {
+    path: 'resort-add',
+    loadChildren: () => import('./resort-add/resort-add.module').then(m => m.ResortAddPageModule)
+  },
+  {
+    path: 'resort-edit',
+    loadChildren: () => import('./resort-edit/resort-edit.module').then(m => m.ResortEditPageModule)
+  },
+  {
+    path: 'resort',
+    loadChildren: () => import('./resort/resort.module').then(m => m.ResortPageModule)
   },
 ];
 
