@@ -17,7 +17,7 @@ export class ResortAddPage implements OnInit {
   ngOnInit() {
   }
   Add() {
-    this.session.ajax("http://localhost/myAppApi/resort-add.php", this.resort, true).then((res: any) => {
+    this.session.ajax(this.session.api + "resort-add.php", this.resort, true).then((res: any) => {
       this.session.back();
     }).catch(err => {
       this.session.showAlert("ติดต่อ server ไม่ได้");

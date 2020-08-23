@@ -21,7 +21,7 @@ export class ResortDetailPage implements OnInit {
     });
   }
   LoadData() {
-    this.session.ajax("http://localhost/myAppApi/resort-detail-get.php", {
+    this.session.ajax(this.session.api + "resort-detail-get.php", {
       resort_id: this.resort_id
     }, true).then((res: any) => {
       this.resort = res.data;

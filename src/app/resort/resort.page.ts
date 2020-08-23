@@ -38,7 +38,7 @@ export class ResortPage implements OnInit {
 
     this.session.showConfirm("ต้องการลบใช่ไหม ?").then(rs => {
       if (rs == true) {
-        this.session.ajax("http://localhost/myAppApi/resort-del.php", {
+        this.session.ajax(this.session.api + "resort-del.php", {
           resort_id: resort.resort_id
         }, true).then((res: any) => {
           this.LoadData();

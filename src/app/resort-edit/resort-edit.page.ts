@@ -21,7 +21,7 @@ export class ResortEditPage implements OnInit {
     });
   }
   LoadData() {
-    this.session.ajax("http://localhost/myAppApi/resort-detail-get.php", {
+    this.session.ajax(this.session.api + "resort-detail-get.php", {
       resort_id: this.resort_id
     }, true).then((res: any) => {
       this.resort = res.data;
@@ -30,7 +30,7 @@ export class ResortEditPage implements OnInit {
     });
   }
   Edit() {
-    this.session.ajax("http://localhost/myAppApi/resort-edit.php", this.resort, true).then((res: any) => {
+    this.session.ajax(this.session.api + "resort-edit.php", this.resort, true).then((res: any) => {
       this.session.back();
     }).catch(err => {
       this.session.showAlert("ติดต่อ server ไม่ได้");
