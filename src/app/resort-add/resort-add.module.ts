@@ -9,12 +9,12 @@ import { ResortAddPageRoutingModule } from './resort-add-routing.module';
 import { ResortAddPage } from './resort-add.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ResortAddPageRoutingModule
-  ],
-  declarations: [ResortAddPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        ResortAddPageRoutingModule
+    ],
+    declarations: [ResortAddPage]
 })
-export class ResortAddPageModule {}
+export class ResortAddPageModule { }

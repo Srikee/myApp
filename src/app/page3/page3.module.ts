@@ -9,12 +9,12 @@ import { Page3PageRoutingModule } from './page3-routing.module';
 import { Page3Page } from './page3.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    Page3PageRoutingModule
-  ],
-  declarations: [Page3Page]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        Page3PageRoutingModule
+    ],
+    declarations: [Page3Page]
 })
-export class Page3PageModule {}
+export class Page3PageModule { }
