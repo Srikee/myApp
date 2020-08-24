@@ -10,7 +10,7 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 export class SessionService {
     public status = false;  // ตัวแปรควบคุมการล็อกอิน  // true : ล็อกอินแล้ว , false: ยังไม่ล็อกอิน
-    public user: any = {};
+    public user: any = {};  // สำหรับเก็บข้อมูลของผู้ลอกอินในขณะนั้น 
     public api = "http://406068045.student.yru.ac.th/ResortAppApi/";     // ตัวแปรสำหรับชี้ที่ตั้งของ Api
     public apiTimeout: number = 5000;
     constructor(
@@ -118,7 +118,7 @@ export class SessionService {
     public removeStorage(key) {     // method สำหรับลบข้อมูล Storage
         return this.storage.remove(key);
     }
-    public linkTo(page, type = true) { // type=false เนเธกเนเธเธณ/ true=เธเธณ
+    public linkTo(page, type = true) { // type=false ไม่จำประวัติก่อนหน้า
         if (type == false) {
             this.router.navigateByUrl(page, { replaceUrl: true }); // เนเธกเนเธเธณเธเธฃเธฐเธงเธฑเธ•เธดเธซเธเนเธฒเธเนเธญเธเธซเธเนเธฒ
         } else {

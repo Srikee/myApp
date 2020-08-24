@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../session/session.service';
 
@@ -7,7 +7,7 @@ import { SessionService } from '../session/session.service';
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
     num1 = 10;
     num2 = 20;
     sum = this.num1 + this.num2;
@@ -21,10 +21,19 @@ export class HomePage {
 
     resorts = [];
 
+
+    user = {};
+
     constructor(
         private session: SessionService
     ) {
 
+    }
+    ngOnInit() {
+        this.user = this.session.user;
+    }
+    GoToProfile() {
+        this.session.linkTo("profile");
     }
     GoToResort() {
         this.session.linkTo("resort");

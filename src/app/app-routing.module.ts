@@ -31,6 +31,14 @@ const routes: Routes = [
         path: 'resort',
         loadChildren: () => import('./resort/resort.module').then(m => m.ResortPageModule)
     },
+    {
+        path: 'login',
+        loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    },
+    {
+        path: 'profile',
+        loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
+    },
 ];
 
 @NgModule({

@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>profile</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div>Name : {{ user.user_name }}</div>
+    <div>Lastname : {{ user.user_lname }}</div>
+    <div>Email : {{ user.email }}</div>
+    <div>Password : {{ user.password }}</div>
+    <ion-button color="danger" (click)="Logout()">ออกจากระบบ</ion-button>
+</ion-content>
